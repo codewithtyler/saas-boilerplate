@@ -1,0 +1,148 @@
+{
+  "app": {
+    "name": "SaaS Boilerplate v3",
+    "description": "A modern, configurable SaaS boilerplate built with Next.js",
+    "url": "https://saas-boilerplate.dev",
+    "logo": "/logo.svg",
+    "isProduction": false
+  },
+  "providers": {
+    "auth": {
+      "selected": "supabase",
+      "accountSignUpEnabled": false,
+      "options": {
+        "next-auth": {
+          "providers": ["github", "google"],
+          "emailVerification": true,
+          "passwordReset": true
+        },
+        "supabase": {
+          "providers": ["github", "google"],
+          "emailVerification": true,
+          "passwordReset": true
+        }
+      }
+    },
+    "database": {
+      "selected": "mongodb",
+      "options": {
+        "mongodb": {
+          "schemas": ["users", "products", "subscriptions"],
+          "migrations": true,
+          "typeGeneration": true
+        },
+        "supabase": {
+          "schemas": ["users", "products", "subscriptions"],
+          "migrations": true,
+          "typeGeneration": true
+        }
+      }
+    },
+    "payment": {
+      "selected": "stripe",
+      "options": {
+        "stripe": {
+          "subscriptions": true,
+          "webhooks": true,
+          "customerPortal": true,
+          "currency": "usd"
+        },
+        "lemonsqueezy": {
+          "subscriptions": true,
+          "webhooks": true,
+          "customerPortal": true,
+          "currency": "usd"
+        }
+      }
+    },
+    "email": {
+      "selected": "mailgun",
+      "options": {
+        "mailgun": {
+          "domain": "",
+          "apiKey": "",
+          "templates": {
+            "welcome": "",
+            "passwordReset": "",
+            "emailVerification": ""
+          }
+        },
+        "sendgrid": {
+          "apiKey": "",
+          "templates": {
+            "welcome": "",
+            "passwordReset": "",
+            "emailVerification": ""
+          }
+        },
+        "resend": {
+          "apiKey": "",
+          "templates": {
+            "welcome": "",
+            "passwordReset": "",
+            "emailVerification": ""
+          }
+        }
+      }
+    }
+  },
+  "seo": {
+    "title": "SaaS Boilerplate - The Ultimate Next.js Starter Kit",
+    "description": "Launch your SaaS faster with our production-ready Next.js boilerplate. Configurable auth, database, and payment providers.",
+    "keywords": ["nextjs", "saas", "boilerplate", "typescript", "tailwind"],
+    "ogImage": "/og-image.png",
+    "twitter": {
+      "handle": "@yourtwitterhandle",
+      "cardType": "summary_large_image"
+    }
+  },
+  "pricing": {
+    "method": "payment",
+    "currency": "USD",
+    "labels": {
+      "paymentLabel": "one-time payment",
+      "subscriptionLabel": "month"
+    },
+    "allFeatures": [
+      "Next.js Boilerplate",
+      "TypeScript & Tailwind CSS",
+      "Mailgun Email Integration",
+      "Stripe / LemonSqueezy Payments",
+      "MongoDB / Supabase Database",
+      "NextAuth.js / Supabase Auth",
+      "Community Support",
+      "Lifetime Updates"
+    ],
+    "plans": [
+      {
+        "name": "Starter",
+        "price": 79,
+        "annualPrice": 790,
+        "features": [
+          "Next.js Boilerplate",
+          "TypeScript & Tailwind CSS",
+          "Mailgun Email Integration",
+          "Stripe / LemonSqueezy Payments",
+          "MongoDB / Supabase Database",
+          "NextAuth.js / Supabase Auth"
+        ]
+      },
+      {
+        "name": "Pro",
+        "price": 149,
+        "annualPrice": 1490,
+        "isPopular": true,
+        "features": [
+          "Next.js Boilerplate",
+          "TypeScript & Tailwind CSS",
+          "Mailgun Email Integration",
+          "Stripe / LemonSqueezy Payments",
+          "MongoDB / Supabase Database",
+          "NextAuth.js / Supabase Auth",
+          "Community Support",
+          "Lifetime Updates"
+        ]
+      }
+    ]
+  }
+}
