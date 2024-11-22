@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Professional dark theme colors */
+    --md-background: 0 0% 9%;
+    --md-surface: 0 0% 11%;
+    --md-surface-1: 0 0% 13%;
+    --md-surface-2: 0 0% 15%;
+    --md-surface-3: 0 0% 17%;
+    --md-surface-4: 0 0% 19%;
+    --md-surface-5: 0 0% 21%;
+    --md-primary: 0 0% 98%;
+    --md-on-primary: 0 0% 0%;
+    --md-primary-container: 0 0% 20%;
+    --md-on-primary-container: 0 0% 90%;
+    --md-secondary: 0 0% 65%;
+    --md-on-secondary: 0 0% 15%;
+    --md-secondary-container: 0 0% 20%;
+    --md-on-secondary-container: 0 0% 85%;
+    --md-outline: 0 0% 18%;
+    
+    /* System colors mapped to new theme */
+    --background: var(--md-background);
+    --foreground: 0 0% 98%;
+    --card: var(--md-surface-1);
+    --card-foreground: 0 0% 98%;
+    --popover: var(--md-surface-2);
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 65%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: var(--md-surface-3);
+    --muted-foreground: 0 0% 65%;
+    --accent: var(--md-primary-container);
+    --accent-foreground: var(--md-on-primary-container);
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: var(--md-outline);
+    --input: var(--md-surface-2);
+    --ring: 0 0% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Dashboard Styles */
+.dashboard-sidebar {
+  @apply bg-[hsl(var(--md-surface))] border-r border-[hsl(var(--md-outline))];
+}
+
+.dashboard-header {
+  @apply bg-[hsl(var(--md-surface-1))] border-b border-[hsl(var(--md-outline))];
+}
+
+.material-card {
+  @apply bg-[hsl(var(--md-surface-1))] rounded-lg border-0 shadow-sm;
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.material-card:hover {
+  @apply bg-[hsl(var(--md-surface-2))] shadow-md;
+}
+
+.material-button {
+  @apply bg-[hsl(var(--md-primary))] text-[hsl(var(--md-on-primary))] 
+         hover:bg-[hsl(var(--md-primary))/0.9] rounded-md;
+}
+
+.material-icon-button {
+  @apply rounded-md p-2 hover:bg-[hsl(var(--md-surface-3))];
+}
+
+.nav-item {
+  @apply rounded-md transition-colors duration-200;
+}
+
+.nav-item:hover {
+  @apply bg-[hsl(var(--md-surface-3))];
+}
+
+.nav-item.active {
+  @apply bg-[hsl(var(--md-primary-container))] text-[hsl(var(--md-on-primary-container))];
+}
+
+.chart-container {
+  @apply rounded-lg bg-[hsl(var(--md-surface-1))] p-4;
+}
